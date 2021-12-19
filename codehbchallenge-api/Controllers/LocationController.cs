@@ -19,13 +19,6 @@ namespace codehbchallenge_api.Controllers
             _locationService = locationService;
         }
 
-        [HttpGet("{value:int}")]
-        public async Task<IActionResult> GetTeste([FromRoute] int value) =>
-            await ApiResultAsync<string>(async () =>
-            {
-                return value.ToString();
-            });
-
         [HttpGet("list-locations")]
         public async Task<IActionResult> GetLocations() =>
             await ApiResultAsync(async () =>

@@ -21,8 +21,8 @@ namespace codehbchallenge_api.Data.Repositories
             _dbConn = sqlConnection.Connection();
         }
 
-        public async Task<IEnumerable<string>> GetAllOrdered() =>
-            await _dbConn.QueryAsync<string>(
+        public async Task<IEnumerable<Location>> GetAllOrdered() =>
+            await _dbConn.QueryAsync<Location>(
                 sql: "select * from Location order by nome desc",
                 param: new { });
 
