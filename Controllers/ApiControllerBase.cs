@@ -11,11 +11,11 @@ namespace codehbchallenge_api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public abstract class ApiControllerBase<T> : ControllerBase
+    public abstract class ApiControllerBase<TController> : ControllerBase
     {
-        private readonly ILogger<T> logger;
+        private readonly ILogger<TController> logger;
 
-        public ApiControllerBase(ILogger<T> _logger)
+        public ApiControllerBase(ILogger<TController> _logger)
         {
             logger = _logger;
         }
@@ -24,7 +24,8 @@ namespace codehbchallenge_api.Controllers
         {
             try
             {
-                var response = fn().GetAwaiter().GetResult();
+                //var response = fn().GetAwaiter().GetResult();
+                var response = await fn();
                 return new ApiResponseResult<T>(response);
             }
             catch (Exception ex)
