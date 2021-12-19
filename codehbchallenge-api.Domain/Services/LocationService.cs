@@ -1,4 +1,5 @@
-﻿using codehbchallenge_api.Domain.Interfaces.Repositories;
+﻿using codehbchallenge_api.Domain.Entities;
+using codehbchallenge_api.Domain.Interfaces.Repositories;
 using codehbchallenge_api.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace codehbchallenge_api.Domain.Services
             _locationRepository = locationRepository;
         }
 
-        public Task<IEnumerable<string>> GetAllOrdered()
+        public Task<IEnumerable<Location>> GetAllOrdered()
         {
             return _locationRepository.GetAllOrdered();
         }

@@ -7,6 +7,6 @@ namespace codehbchallenge_api.Domain.Interfaces.Repositories
 {
     public interface ILocationRepository : IRepository<Location>
     {
-        Task<IEnumerable<string>> GetAllOrdered();
+        Task<IEnumerable<Location>> GetAllOrdered();
     }
 }
