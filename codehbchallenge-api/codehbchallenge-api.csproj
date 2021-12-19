@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>codehbchallenge_api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\codehbchallenge-api.Data\codehbchallenge-api.Data.csproj" />
+    <ProjectReference Include="..\codehbchallenge-api.Domain\codehbchallenge-api.Domain.csproj" />
+  </ItemGroup>
+
+
+</Project>
