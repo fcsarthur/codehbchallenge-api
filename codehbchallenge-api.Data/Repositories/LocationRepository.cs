@@ -33,8 +33,8 @@ namespace codehbchallenge_api.Data.Repositories
             //kilometers: 6371
 
             return await _dbConn.QueryAsync<GetNearestLocationsResponse>(
-                sql: "select *, ( 6371 * acos( cos( radians(-30.044100000000000) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(-51.219400000000000) ) + sin( radians(-30.044100000000000) ) * sin( radians( latitude ) ) ) ) distance from Location order by distance asc",
-                param: new { });
+                sql: "select *, ( 6371 * acos( cos( radians(@lat) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(@lng) ) + sin( radians(@lat) ) * sin( radians( latitude ) ) ) ) distance from Location order by distance asc",
+                param: new { lat, lng});
         }
 
 
