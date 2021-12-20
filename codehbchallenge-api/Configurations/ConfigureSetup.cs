@@ -12,10 +12,9 @@ namespace codehbchallenge_api.Configurations
         public static void UseConfigureSetup(this IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseCors(p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().Build());
-            
-            //TODO - implementar swagger
-            //app.UseSwagger();
-            //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "codehbchallenge-api"));
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "codehbchallenge-api"));
 
             app.UseHttpsRedirection();
 

@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\codehbchallenge-api.Data\codehbchallenge-api.Data.csproj" />
     <ProjectReference Include="..\codehbchallenge-api.Domain\codehbchallenge-api.Domain.csproj" />
   </ItemGroup>
