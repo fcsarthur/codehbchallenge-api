@@ -1,4 +1,5 @@
 ﻿using codehbchallenge_api.Domain.Interfaces.Services;
+using codehbchallenge_api.Domain.Queries.Requests;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -24,6 +25,13 @@ namespace codehbchallenge_api.Controllers
             await ApiResultAsync(async () =>
             {
                 return await _locationService.GetAllOrdered();
+            });
+
+        [HttpGet("nearest-locations")]
+        public async Task<IActionResult> GetNearestLocations([FromQuery] GetNearestLocationsRequest request) =>
+            await ApiResultAsync(async () =>
+            {
+                return await _locationService.GetAllOrderedByDistance(request);
             });
     }
 }
